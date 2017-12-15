@@ -1,0 +1,276 @@
+<p></p>
+<p class="red">To be completed by contractor for all parts below</p>
+<p class="red">(E) Categories of Accident / Incident (Except dangerous occurence, you can tick one box only and attached information)</p>
+
+  <div class="card" ng-app>
+    <div class="card-block">
+      <form class="k-form">
+          <div class="x_panel"><div class="content">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p style="line-height: 2em;">
+                  <span>E01</span>
+                  <input type="checkbox" id="E01" class="k-checkbox"/>
+                  <label class="k-checkbox-label" for="E01">Non-serious accident</label><br/>
+                  <span>E03</span>
+                  <input type="checkbox" id="E03" class="k-checkbox"/>
+                  <label class="k-checkbox-label" for="E03">SFatal accident</label><br/>
+                  <span>E05</span>
+                  <input type="checkbox" id="E05" class="k-checkbox"/>
+                  <label class="k-checkbox-label" for="E05">Incident  Near Miss</label><br/>
+
+                 </p>
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <p style="line-height: 2em;">
+                  <span>E02</span>
+                  <input type="checkbox" id="E02" class="k-checkbox"/>
+                  <label class="k-checkbox-label" for="E02">Serious accident</label><br/>
+                  <span>E04</span>
+                  <input type="checkbox" id="E04" class="k-checkbox"/>
+                  <label class="k-checkbox-label" for="E04">Dangerous occurrence</label><br/>
+                  <span>E06</span>
+                  <input type="checkbox" id="E06" class="k-checkbox"/>
+                  <label class="k-checkbox-label" for="E06">Death of person not due to industrial accident</label><br/>
+
+                </p>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <p style="line-height: 2em;">
+                  <span>E07</span>
+                  <input type="checkbox" id="E07" class="k-checkbox"/>
+                  <label class="k-checkbox-label" for="E07">Accident resulting in absence from work for not more than 3 days</label><br/>
+                  <span>E08</span>
+                  <input type="checkbox" id="E08" class="k-checkbox" (click)="showDiseaseElement()" />
+                  <label class="k-checkbox-label" for="E08">Death or incapacity due to occupational disease</label>
+                </p>
+              </div>
+            </div>
+        </div>
+      </div></div>
+      </form>
+
+      <div class="card" [hidden]="!diseaselement">
+        <div class="card-block">
+            <form class="k-form-inline">
+              <div class="row">
+                <div class="col-sm-12">
+                            <div class="col-sm-10">
+                                <label class="k-form-field">
+                                  <span>Name of hospital or clinic where the employee received treatment:</span>
+                                  <input class="k-textbox" placeholder="" />
+                                </label>
+
+                                <label class="k-form-field">
+                                  <span>Date of commencement of the occupational disease:</span>
+                                  <kendo-datepicker placeholder="DD/MM/YYYY" [format]="'dd/MM/yyyy'" [value]="today"></kendo-datepicker>
+                                </label>
+                                <label class="k-form-field">
+                                  <span>Disease suffering from:</span>
+                                  <input class="k-textbox" placeholder="" />
+                                </label>
+                                <label class="k-form-field">
+                                  <span>Type of work attributed to the occupational disease::</span>
+                                  <input class="k-textbox" placeholder="" />
+                                </label>
+                                <label class="k-form-field">
+                                  <span>The disease resulted in:</span>
+
+                                  <form class="k-form-inline">
+                                          <div class="row">
+                                          <div class=" col-sm-12">
+                                          <label class="k-form-field">
+                                            <div class=" col-sm-4">
+                                              <label class="k-form-field">
+                                                <input type="checkbox" id="tmpincap" class="k-checkbox"/>
+                                                <label class="k-checkbox-label" for="tmpincap">tempaorary incapacity</label>
+                                              </label>
+                                            </div>
+                                            <div class=" col-sm-4">
+                                              <label class="k-form-field">
+                                                <input type="checkbox" id="perincap" class="k-checkbox"/>
+                                                <label class="k-checkbox-label" for="perincap">permanent incapacity</label>
+                                              </label>
+                                            </div>
+                                            <div class=" col-sm-4">
+                                              <label class="k-form-field">
+                                                <input type="checkbox" id="death" class="k-checkbox"/>
+                                                <label class="k-checkbox-label" for="death">death</label>
+                                              </label>
+                                            </div>
+                                          </label>
+                                          <label class="k-form-field">
+
+                                              on
+                                              <kendo-datepicker placeholder="DD/MM/YYYY" [format]="'dd/MM/yyyy'" [value]="today"></kendo-datepicker>
+                                              (yyyymmdd)
+
+                                          </label>
+                                        </div>
+                                        </div>
+                                </form>
+                                </label>
+                          </div>
+                          <div class="col-sm-2">
+                          </div>
+                </div>
+              </div>
+              </form>
+        </div>
+      </div>
+
+      <h4>Please tick the box against the information to be attached on the hard copy when this Form DCMP-F787 is printed:</h4>
+      <div class="x_panel"><div class="content">
+        <form class="k-form-inline">
+        <div class="row">
+          <div class="col-sm-12">
+                  <div class="col-sm-2">
+                    a.Form2
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <input type="checkbox" id="dcmpa"class="k-checkbox"/>
+                      <label class="k-checkbox-label" for="dcmpa" >N/A</label>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <input type="checkbox"  class="k-checkbox"/>
+                      <label class="k-checkbox-label" >upload</label>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <kendo-upload></kendo-upload>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <input type="checkbox"  class="k-checkbox"/>
+                      <label class="k-checkbox-label" >to be submitted</label>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                  </div>
+          </div>
+          <div class="col-sm-12">
+                  <div class="col-sm-2">
+                    b.SIS
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <input type="checkbox"  id="dcmpb" class="k-checkbox"/>
+                      <label class="k-checkbox-label" for="dcmpb">N/A</label>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <input type="checkbox"  class="k-checkbox"/>
+                      <label class="k-checkbox-label" >upload</label>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <kendo-upload></kendo-upload>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <input type="checkbox"  class="k-checkbox"/>
+                      <label class="k-checkbox-label" >to be submitted</label>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                  </div>
+          </div>
+          <div class="col-sm-12">
+                  <div class="col-sm-2">
+                    c.DO report
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <input type="checkbox"  id="dcmpc "class="k-checkbox"/>
+                      <label class="k-checkbox-label" for="dcmpc">N/A</label>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <input type="checkbox"  class="k-checkbox"/>
+                      <label class="k-checkbox-label">upload</label>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <kendo-upload></kendo-upload>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <input type="checkbox"  class="k-checkbox"/>
+                      <label class="k-checkbox-label">to be submitted</label>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                  </div>
+          </div>
+          <div class="col-sm-12">
+                  <div class="col-sm-2">
+                    d.Investigation report
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <input type="checkbox" id="dcmpd" class="k-checkbox"/>
+                      <label class="k-checkbox-label" for="dcmpd">N/A</label>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <input type="checkbox"  class="k-checkbox"/>
+                      <label class="k-checkbox-label" >upload</label>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <kendo-upload ></kendo-upload>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <label class="k-form-field">
+                      <input type="checkbox"  class="k-checkbox"/>
+                      <label class="k-checkbox-label" >to be submitted</label>
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                  </div>
+          </div>
+        </div>
+        </form>
+      </div></div>
+
+      <br>Explanatory notes:
+      <br>E01 Serious accident:Serious accident means serious bodily injury resulting in a loss or an amputation of a limb or which has caused
+      or is likely to cause permanent total disablement to the injured.
+      <br>E03 Fatal accident:Reportable industrial accident resulting in death.
+      <br>E04 Dangerous occurrence(DO) is defined under Schedule 1 of F&IU Req(Cap 59A) and extracted below for ease of reference:
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.Bursting of a revolving vessel, wheel,grindstone or grinding wheel moved by mechanical power.
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.Collapse of failure of a crane, derrick, winch, hoist or other applliance(but not including a builder's lift or tower working platform to which the Builders' Lifts and Tower Working Platforms (Saftety) Ordinance (Cap 470)applies) used in raising or lowering persons or goods or any part thereof(except the breakage of chain or rope slings), or the overtuming of a crane.
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.Explosion or fire causin damage to the structure of any room or place in which persons are employed, or to any machine or plant contained therein and resulting in the complete suspension of ordinary work in such room or place.
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.Electrical short circuit or failure of electrical machinery, plant or apparatus, attended by explosion of fire or causing structuraldamage thereto, and involving its stoppage or disuse.
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.Explosion of a receiver or container used for the storage at a pressure greater than atmospheric pressure of any gas or gases (including air) or any liquid or solid resulting from the compression of gas.
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.Collapse in whole or part from any cause whatsoever of any roof, wall, floor, structure or foundation forming part of the premises of an industrial undertaking in which persons are employed.
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.Total or partial collapse of any overburden, face, tip or embankment in a quarry.
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.Overturning of, or collision with any object by, any bulldozer, dumper, excavator, grader, lorry or shovel loader, or any mobile machine used for the handling of any substance in a quarry.
+      <br>E05 Incident/Near Miss is a non-reportable incident not involving any injury.
+      <br>E06 Death of person on site: Death of person on site to be reported as occupation injury to lLabour Department within 24 hours and might not be classified as 'E03 Fatal accident' by the Occupational Safety Officer of Labour Department initially.
+      <br>
+      <br>Sensitive privacy data of employee to be concealed in Form2 submisssion to CM, such as ID no,. day/ month of birth, address,tel./fax no. etc.
+
+
+    </div>
+  </div>
+

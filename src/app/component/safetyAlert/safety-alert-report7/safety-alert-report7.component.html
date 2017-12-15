@@ -1,0 +1,38 @@
+<app-safety-alert-report-menu></app-safety-alert-report-menu>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <div class="col-md-12 col-sm-12 col-xs-12 reportTitle">Report 7: Accident rate per 1,000 workers of HA New Works contracts by contract number. <br/>HA: All active and completed sites / building sites / engineering sites of New Works contracts with HA control limit</div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form class="form-horizontal form-label-left">
+                
+                <div class="form-group row">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Cut-Off date:</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                      <kendo-datepicker placeholder="DD/MM/YYYY" [format]="'dd/MM/yyyy'" [value]="today"></kendo-datepicker>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Contract Number(s):</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                      <textarea class="k-textarea" style="min-width:500px"></textarea>
+                      <br/>
+                      (Use a semicolon ";" for separation if more than one contract numbers are to be inserted. E.g. 20120096;20120095)
+                  </div>
+                </div>
+    
+              </form>
+            <div class="form-group row">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <button  (click)="closeSearch()" class="btn btn-success" >Search</button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

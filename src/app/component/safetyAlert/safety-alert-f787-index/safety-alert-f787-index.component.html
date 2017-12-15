@@ -1,0 +1,184 @@
+
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-6">
+      <div class="x_panel">
+    <div class="x_title">
+      <h2>Search</h2>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+          <form class="form-horizontal form-label-left">
+            <div class="form-group row">
+              <label class="control-label col-md-5 col-sm-5 col-xs-12">Case Manager</label>
+              <div class="col-md-7 col-sm-7 col-xs-12">
+                <input type="text" class="k-textbox form-control form-control-lg"/>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="control-label col-md-5 col-sm-5 col-xs-12">Contract Number</label>
+              <div class="col-md-7 col-sm-7 col-xs-12">
+                <input type="text" class="k-textbox form-control form-control-lg"/>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="control-label col-md-5 col-sm-5 col-xs-12">Contract Title</label>
+              <div class="col-md-7 col-sm-7 col-xs-12">
+                <input type="text" class="k-textbox form-control form-control-lg"/>
+              </div>
+            </div>
+          </form>
+          <div class="form-group row">
+            <label class="control-label col-md-5 col-sm-5 col-xs-12"></label>
+              <div class="col-md-7 col-sm-7 col-xs-12">
+                <button  (click)="closeSearch()" class="btn btn-primary" >Clear</button>
+                <button  (click)="closeSearch()" class="btn btn-success" >Search</button>
+              </div>
+          </div>
+    </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-6">
+      <div class="x_panel">
+    <div class="x_title">
+      <h2>Export</h2>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+
+          <form class="form-horizontal form-label-left">
+            <div class="form-group row">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12">Start Date</label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <kendo-datepicker placeholder="DD/MM/YYYY" [format]="'dd/MM/yyyy'" [value]="today"></kendo-datepicker>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12">End Date</label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <kendo-datepicker placeholder="DD/MM/YYYY" [format]="'dd/MM/yyyy'" [value]="today"></kendo-datepicker>
+              </div>
+            </div>
+          </form>
+          <div class="form-group row">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <button  (click)="closeExport()" class="btn btn-success" >Export</button>
+              </div>
+          </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Form 787</h2>
+        <span class="pull-right"></span>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+
+        <form class="form-horizontal form-label-left">
+          <div class="form-group row">
+            <kendo-grid
+                [data]="view | async"
+                [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"
+                [pageable]="true" [sortable]="true"
+                (dataStateChange)="onStateChange($event)"
+                (edit)="editHandler($event)" (cancel)="cancelHandler($event)"
+                (save)="saveHandler($event)" (remove)="removeHandler($event)"
+                (add)="addHandler($event)"
+              >
+
+              <p></p>
+              <kendo-grid-column [width]="100" field="caseNumber">
+                <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                  Case<br>Number
+                </ng-template>
+              </kendo-grid-column>
+              <kendo-grid-column [width]="90" field="contractNumber">
+                <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                  Contract<br>Number
+                </ng-template>
+              </kendo-grid-column>
+              <kendo-grid-column field="contractTitle">
+                <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                  Contract<br>Title
+                </ng-template>
+              </kendo-grid-column>
+              <kendo-grid-column field="contractor">
+                <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                  Contractor
+                </ng-template>
+              </kendo-grid-column>
+              <kendo-grid-column field="status">
+                <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                  Status
+                </ng-template>
+              </kendo-grid-column>
+              <kendo-grid-column [width]="110" field="accidentIncidentDate">
+                <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                  Accident/<br>Incident Date
+                </ng-template>
+              </kendo-grid-column>
+
+              <kendo-grid-command-column [width]="120" title="">
+                  <ng-template kendoGridCellTemplate>
+                      <button (click)="navigate('safetyAlert/f787Main')" class="btn btn-primary"> Edit / View </button>
+                  </ng-template>
+              </kendo-grid-command-column>
+
+              <ng-template kendoGridDetailTemplate let-dataItem>
+                  <div class="x_content">
+                    <section class="well bg-well">
+                      <form class="form-horizontal form-label-left">
+                          <div class="form-group row">
+                              <label class="col-md-3 col-sm-3 col-xs-12">Site Staff:</label>
+                              <div class="col-md-3 col-sm-3 col-xs-12">{{dataItem.siteStaff}}</div>
+                              <label class="col-md-3 col-sm-3 col-xs-12">Contract Manager:</label>
+                              <div class="col-md-3 col-sm-3 col-xs-12">{{dataItem.contractManager}}</div>
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-md-3 col-sm-3 col-xs-12">Submission Date:</label>
+                              <div class="col-md-3 col-sm-3 col-xs-12">{{dataItem.submissionDate}}</div>
+                              <label class="col-md-3 col-sm-3 col-xs-12">SIS Number:</label>
+                              <div class="col-md-3 col-sm-3 col-xs-12">{{dataItem.sisNumber}}</div>
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-md-3 col-sm-3 col-xs-12">Remarks:</label>
+                              <div class="col-md-8 col-sm-8 col-xs-32">
+                                <textarea class="k-textarea" style="min-width:450px"></textarea>
+                              </div>
+                              <div class="col-md-1 col-sm-1 col-xs-3">
+                                  <button class="btn btn-danger" >Void</button>
+                              </div>
+                            </div>
+                            <div class="ln_solid"></div>
+                            <div class="form-group row">
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                <button class="btn btn-danger">Delete</button>
+                                <button class="btn btn-primary">Export PDF</button>
+                                <button class="btn btn-primary">Form 2</button>
+                                <button class="btn btn-primary">Form 2A</button>
+                                <button class="btn btn-primary">Form 2B</button>
+                                <button class="btn btn-primary">DO</button>
+                                <button class="btn btn-primary">F758</button>
+                                <button (click)="navigate('safetyAlert/rca')" class="btn btn-primary">Root Cause Analysis</button>
+                              </div>
+                            </div>
+                      </form>
+                    </section>
+                  </div>
+                
+              </ng-template>
+            </kendo-grid>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Root Cause Analysis (2015-00059)</h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+              <section class="well">
+                <kendo-tabstrip>
+                    <kendo-tabstrip-tab [title]="'Part 1'" [selected]="true">
+                      <ng-template kendoTabContent>
+                        <app-rca-part-1></app-rca-part-1>
+                      </ng-template>
+                    </kendo-tabstrip-tab>
+                    <kendo-tabstrip-tab [title]="'Part 2'">
+                      <ng-template kendoTabContent>
+                        <app-rca-part-2></app-rca-part-2>
+                      </ng-template>
+                    </kendo-tabstrip-tab>
+                    <kendo-tabstrip-tab [title]="'Part 3'" >
+                      <ng-template kendoTabContent>
+                        <app-rca-part-3></app-rca-part-3>
+                      </ng-template>
+                    </kendo-tabstrip-tab>
+                </kendo-tabstrip>
+              </section>
+            </div>
+        </div>
+    </div>
+</div>

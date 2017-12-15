@@ -1,0 +1,20 @@
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_content">
+        <form class="form-horizontal form-label-left">
+            <div class="form-group row">
+
+      <kendo-dropdownlist [data]="data" textField="text" valueField="routerLink" style="width:800px"
+      [filterable]="false"
+      (valueChange)="valueChange($event)"
+      (selectionChange)="selectionChange($event)"
+      (filterChange)="filterChange($event)"
+    >
+    </kendo-dropdownlist>
+
+    </div>
+    </form>
+    </div>
+  </div>
+</div>

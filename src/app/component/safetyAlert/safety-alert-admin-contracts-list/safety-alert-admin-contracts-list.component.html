@@ -1,0 +1,153 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+      <div class="x_title">
+        <h2>Search</h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+  
+            <form class="form-horizontal form-label-left">
+              <div class="form-group row">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <select class="form-control" id="status" required name="status">
+                    <option *ngFor="let status of source" [value]="status">{{status}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Contract Number</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="k-textbox form-control form-control-lg"/>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Contract Title</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="k-textbox form-control form-control-lg"/>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Contract Manager</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="k-textbox form-control form-control-lg"/>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Commencement Date</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <kendo-datepicker placeholder="DD/MM/YYYY" [format]="'dd/MM/yyyy'" [value]="today"></kendo-datepicker>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Completion Date</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <kendo-datepicker placeholder="DD/MM/YYYY" [format]="'dd/MM/yyyy'" [value]="today"></kendo-datepicker>
+                </div>
+              </div>
+            </form>
+            <div class="form-group row">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <button  (click)="closeSearch()" class="btn btn-primary" >Clear</button>
+                  <button  (click)="closeSearch()" class="btn btn-success" >Search</button>
+                </div>
+            </div>
+      </div>
+      </div>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Contract</h2>
+        <h2 class="pull-right" style="color:black"></h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+          <div class="">
+              <button class="btn btn-success">Monthly data</button>
+            </div>
+        <form class="form-horizontal form-label-left">
+          <div class="form-group row">
+            <kendo-grid
+                [data]="view | async"
+                [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"
+                [pageable]="true" [sortable]="true"
+                (dataStateChange)="onStateChange($event)"
+                (edit)="editHandler($event)" (cancel)="cancelHandler($event)"
+                (save)="saveHandler($event)" (remove)="removeHandler($event)"
+                (add)="addHandler($event)"
+              >
+              <kendo-grid-column [width]="90" field="contractNumber">
+                <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                  Contract<br>Number
+                </ng-template>
+              </kendo-grid-column>
+              <kendo-grid-column field="contractTitle">
+                <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                  Contract<br>Title
+                </ng-template>
+              </kendo-grid-column>
+              <kendo-grid-column [width]="130" field="commencementDate">
+                <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                  Commencement<br>Date
+                </ng-template>
+              </kendo-grid-column>
+
+              <kendo-grid-column [width]="70" field="status">
+                <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                  Status
+                </ng-template>
+              </kendo-grid-column>
+
+              <kendo-grid-command-column [width]="170" title="">
+                  <ng-template kendoGridCellTemplate>
+                      <form class="form-horizontal form-label-left">
+                          <div class="form-group row">
+                            <button (click)="navigate('safetyAlert/adminContractsEdit')" class="btn btn-primary">&nbsp;Edit&nbsp;&nbsp;</button>
+                            <button (click)="navigate('safetyAlert/f787Main')" class="btn btn-danger">Delete</button>
+                          </div>
+                      </form>
+                  </ng-template>
+              </kendo-grid-command-column>
+              <ng-template kendoGridDetailTemplate let-dataItem>
+                  <div class="x_content">
+                    <section class="well bg-well">
+                      <form class="form-horizontal form-label-left">
+                          <div class="form-group row">
+                              <label class="col-md-5 col-sm-5 col-xs-12">Completion/Extended Completion Date:</label>
+                              <div class="col-md-3 col-sm-3 col-xs-12">{{dataItem.completionDate}}</div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-md-5 col-sm-5 col-xs-12">Certified Completion Date:</label>
+                              <div class="col-md-3 col-sm-3 col-xs-12">{{dataItem.certifiedCompletionDate}}</div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-sm-3 col-xs-12">Cut-off Date:</label>
+                              <div class="col-md-3 col-sm-3 col-xs-12">{{dataItem.cutOffDate}}</div>
+                              <label class="col-md-3 col-sm-3 col-xs-12">Submission Date:</label>
+                              <div class="col-md-3 col-sm-3 col-xs-12">{{dataItem.submissionDate}}</div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="col-md-3 col-sm-3 col-xs-12">Contract Manager:</label>
+                              <div class="col-md-3 col-sm-3 col-xs-12">{{dataItem.contractManager}}</div>
+                          </div>
+                      </form>
+                    </section>
+                  </div>
+                
+              </ng-template>
+            </kendo-grid>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

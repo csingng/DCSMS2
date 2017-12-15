@@ -1,0 +1,87 @@
+<div class="col-md-3 left_col">
+  <div class="left_col scroll-view">
+    <div class="navbar nav_title" style="border: 0;">
+      <a routerLink="" class="site_title"><span>Housing Authority</span></a>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <!-- menu profile quick info -->
+    <div class="profile clearfix">
+      <div class="profile_pic">
+      </div>
+      <div class="profile_info">
+        <span></span>
+        <h2></h2>
+      </div>
+    </div>
+    <!-- /menu profile quick info -->
+
+    <br />
+
+    <!-- sidebar menu -->
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+      <div class="menu_section">
+        <h3></h3>
+        <ul class="nav side-menu">
+          <li><a id="memoli" (click)="anchorClicked($event)">
+            <i class="fa fa-home"></i>Site Direction / Memo<span id="memochevron" class="fa fa-chevron-down"></span></a>
+          </li>
+          
+          <li><a id="safetyli" (click)="anchorClicked($event)">
+            <i class="fa fa-edit"></i>Safety Alert<span id="safetychevron" class="fa fa-chevron-down"></span></a>
+            <ul class="nav child_menu">
+                <li><a *ngIf="role=='oshcUser' || role=='haUser' || role=='contractor'" routerLink="safetyAlert/dashboard">Dashboard</a></li>
+                <li><a *ngIf="role=='haUser' || role=='haProfessionalStaff'" routerLink="safetyAlert/adminContractsList">Contract</a></li>
+                <li><a *ngIf="role=='oshcUser' || role=='haUser' || role=='contractor' || role=='haSiteStaff' || role=='contractManager'" routerLink="safetyAlert/f787Maintain">F787</a></li>
+                <li><a *ngIf="role=='oshcUser' || role=='haUser'  || role=='crcSecretary' || role=='haProfessionalStaff'" routerLink="safetyAlert/report1">Reports</a></li>
+                <li><a routerLink="">Report Historical Data</a></li>
+                <li><a *ngIf="role=='oshcUser'" routerLink="">OSHC User Admin</a></li>
+                <li><a *ngIf="role=='oshcUser'" routerLink="">HA User Admin</a></li>
+                <li><a *ngIf="role=='oshcUser'" routerLink="">Contract Manager Admin</a></li>
+                <li><a *ngIf="role=='oshcUser'" routerLink="">Site Staff Admin</a></li>
+                <li><a *ngIf="role=='oshcUser'" routerLink="">Contractor Admin</a></li>
+                <li><a *ngIf="role=='oshcUser'" routerLink="">Contract Admin</a></li>
+                <li><a *ngIf="role=='contractor'" routerLink="">Contractor Corporate Limits</a></li>
+                <li><a routerLink="">HA Corporate Limits</a></li>
+                <li><a routerLink="">CM Alert Limits</a></li>
+                <li><a routerLink="">CRC Warning Alert Limits</a></li>
+                <!-- li><a id="safetyAdminli" (click)="anchorClicked($event)"> Admin <span id="safetyAdminchevron" class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li class="sub_menu"><a routerLink="safetyAlert/f787Index">Contract</a></li>
+                  </ul>
+                </li -->
+            </ul>
+          </li>
+          <li><a id="siteli" (click)="anchorClicked($event)">
+            <i class="fa fa-desktop"></i>Site Alert<span id="sitechevron" class="fa fa-chevron-down"></span></a>
+          </li>
+          <li><a id="structli" (click)="anchorClicked($event)">
+            <i class="fa fa-table"></i>Structural Inspection<span id="structchevron" class="fa fa-chevron-down"></span></a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- /sidebar menu -->
+
+    <!-- /menu footer buttons -->
+    <!-- /menu footer buttons -->
+  </div>
+</div>
+<!-- top navigation -->
+<div class="top_nav">
+  <div class="nav_menu">
+    <nav>
+      <div class="nav toggle">
+        <a id="menu_toggle" (click)="toggleClicked($event)" ><i class="fa fa-bars"></i></a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li style="margin-right:20px; margin-top:10px">
+          <h4>Chan Tai Man</h4>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- /top navigation -->

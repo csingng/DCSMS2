@@ -1,0 +1,65 @@
+<p></p>
+<p class="red">(B) Project Information</p>
+
+  <div class="card">
+    <div class="card-block">
+
+      <form class="k-form-inline">
+        <label class="k-form-field">
+          <span class="control-label col-md-4 col-sm-4 col-xs-4">B01 Project</span>
+          <input class="k-textarea" />
+        </label>
+        <label class="k-form-field">
+          <span>B02 Contract No.</span>
+          <input class="k-textbox" placeholder="" />
+        </label>
+        <label class="k-form-field">
+          <span>B03 Contractor</span>
+          <input class="k-textbox" placeholder="" />
+        </label>
+        <label class="k-form-field">
+          <span>B04 Date of Accident/Incident</span>
+          <kendo-datepicker placeholder="DD/MM/YYYY" [format]="'dd/MM/yyyy'" [value]="today"></kendo-datepicker>
+        </label>
+        <label class="k-form-field">
+          <span>B05 Subcontractor<br/> (if applicable)</span>
+          <input class="k-textbox" placeholder="" />
+        </label>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <label class="k-form-field">
+                <span>B06 Type of Contract</span>
+                <div class="row">
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                        <p style="line-height: 2em;">
+                            <input type="checkbox" id="b06-a" class="k-checkbox" checked="checked">
+                            <label class="k-checkbox-label" for="b06-a">Building</label><br/>
+                            <input type="checkbox" id="b06-c" class="k-checkbox" checked="checked">
+                            <label class="k-checkbox-label" for="b06-c">Civil Engineering</label>
+                            <input type="checkbox" id="b06-e" class="k-checkbox" checked="checked">
+                            <label class="k-checkbox-label" for="b06-e">Building / Piling Combined</label><br/>
+                        </p>
+                  </div>
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                        <p style="line-height: 2em;">
+                          <input type="checkbox" id="b06-b" class="k-checkbox" checked="checked">
+                          <label class="k-checkbox-label" for="b06-b">Foundation</label><br/>
+                          <input type="checkbox" id="b06-d" class="k-checkbox" checked="checked">
+                          <label class="k-checkbox-label" for="b06-d">Demolition</label>
+                          <input type="checkbox" id="b06-f" class="k-checkbox" checked="checked">
+                          <label class="k-checkbox-label" for="b06-f">Ground Investigation</label><br/>
+                        </p>
+                  </div>
+                  
+                </div>
+                
+              </label>
+            </div>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+

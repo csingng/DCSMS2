@@ -1,0 +1,34 @@
+<app-safety-alert-report-menu></app-safety-alert-report-menu>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <div class="col-md-12 col-sm-12 col-xs-12 reportTitle">Report 5: Annualised accident rate per 1,000 workers of New Works contracts by month in x period.<br/>HA: All construction sites with one control limit (i.e. HA target)</div>
+          
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form class="form-horizontal form-label-left">
+                <div class="form-group row">
+                  <label class="control-label col-md-1 col-sm-1 col-xs-1">From</label>
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <select class="form-control" id="fromYear" required name="fromYear">
+                      <option *ngFor="let year of yearRange" [value]="fromYear">{{year}}</option>
+                    </select>
+                  </div>
+                  <label class="control-label col-md-1 col-sm-1 col-xs-1">To</label>
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <select class="form-control" id="toYear" required name="toYear">
+                      <option *ngFor="let year of yearRange" [value]="toYear">{{year}}</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                      <button  (click)="closeSearch()" class="btn btn-success" >Search</button>
+                  </div>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

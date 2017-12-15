@@ -1,0 +1,52 @@
+<app-safety-alert-report-menu></app-safety-alert-report-menu>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+            <div class="col-md-12 col-sm-12 col-xs-12 reportTitle">
+              Report 6: Annualized accumulative accident rate per 1,000 workers of New Works contracts by month in x period. Individual site within 4 limits (warning, target and alert of HA, contractor's corporate)
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form class="form-horizontal form-label-left">
+                <div class="form-group row">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-3">From</label>
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <select class="form-control" id="fromYear" required name="fromYear">
+                      <option *ngFor="let year of yearRange" [value]="fromYear">{{year}}</option>
+                    </select>
+                  </div>
+                  <label class="control-label col-md-1 col-sm-1 col-xs-1">To</label>
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <select class="form-control" id="toYear" required name="toYear">
+                      <option *ngFor="let year of yearRange" [value]="toYear">{{year}}</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Contract Number:</label>
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        <input type="text" class="k-textbox form-control form-control-lg" />
+                    </div>
+                </div>
+                  <div class="form-group row">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3"></label>
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                          <button  (click)="closeSearch()" class="btn btn-success" >Search</button>
+                      </div>
+                      <label class="control-label col-md-1 col-sm-1 col-xs-1"></label>
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3">
+                          
+                      </div>
+                    </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

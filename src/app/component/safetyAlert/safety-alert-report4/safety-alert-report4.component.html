@@ -1,0 +1,93 @@
+<app-safety-alert-report-menu></app-safety-alert-report-menu>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <div class="col-md-12 col-sm-12 col-xs-12 reportTitle">Report 4: Accident rate per 1,000 workers of New Works contracts, and M&I contracts against construction industry by year</div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form class="k-form">
+                <div class="form-group row ">
+                    <div class="control-label col-md-3 col-sm-3 col-xs-12">
+        
+                        <input type="checkbox" id="E07" class="k-checkbox" />
+                        <label class="k-checkbox-label" for="E07">HA Mew Works</label>
+                        <br/>
+                    </div>
+                </div>
+        
+                <div class="form-group row ">
+                  <div class="control-label col-md-1 col-sm-1 col-xs-12"></div>
+                  <div class="form-group row col-md-9 col-sm-9 col-xs-12">
+                      <input type="checkbox" id="E08" class="k-checkbox" (click)="showDiseaseElement()" />
+                      <label class="k-checkbox-label" for="E08">Building Sites</label>
+                      <br/>
+                      <input type="checkbox" id="E08" class="k-checkbox" (click)="showDiseaseElement()" />
+                      <label class="k-checkbox-label" for="E08">Foundation Sites</label>
+                      <br/>
+                      <input type="checkbox" id="E08" class="k-checkbox" (click)="showDiseaseElement()" />
+                      <label class="k-checkbox-label" for="E08">Civil Engineering Sites</label>
+                      <br/>
+                      <input type="checkbox" id="E08" class="k-checkbox" (click)="showDiseaseElement()" />
+                      <label class="k-checkbox-label" for="E08">Demolition Sites</label>
+        
+                  </div>
+                </div>
+        
+                        <!-- <div class="form-group row ">
+                          <div class="control-label col-md-3 col-sm-3 col-xs-12 margin-left: 45px">
+                            <input type="checkbox" id="E08" class="k-checkbox" (click)="showDiseaseElement()" />
+                            <label class="k-checkbox-label" for="E08">HA M&I</label>
+                            <br/>
+                            <input type="checkbox" id="E08" class="k-checkbox" (click)="showDiseaseElement()" />
+                            <label class="k-checkbox-label" for="E08">Construction Industry</label>
+                            <br/>
+                            <input type="checkbox" id="E08" class="k-checkbox" (click)="showDiseaseElement()" />
+                            <label class="k-checkbox-label" for="E08">DEVB</label>
+                        
+                          </div>
+                        </div> -->
+        
+        
+                <div class="form-group row ">  
+                  <div class="control-label col-md-3 col-sm-3 col-xs-12">
+                    <input type="checkbox" id="E08" class="k-checkbox" (click)="showDiseaseElement()" />
+                    <label class="k-checkbox-label" for="E08">HA M&I</label>
+                    <br/>
+                    <input type="checkbox" id="E08" class="k-checkbox" (click)="showDiseaseElement()" />
+                    <label class="k-checkbox-label" for="E08">Construction Industry</label>
+                    <br/>
+                    <input type="checkbox" id="E08" class="k-checkbox" (click)="showDiseaseElement()" />
+                    <label class="k-checkbox-label" for="E08">DEVB</label>
+                
+                  </div>
+                </div>
+        
+        
+                <div class="form-group row ">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Year Range</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    From:
+                    <select class="form-control" id="fromYear" required name="fromYear">
+                      <option *ngFor="let year of yearRange" [value]="fromYear">{{year}}</option>
+                    </select>&nbsp;&nbsp;&nbsp; To:
+                    <select class="form-control" id="toYear" required name="toYear">
+                      <option *ngFor="let year of yearRange" [value]="toYear">{{year}}</option>
+                    </select>
+                    <button (click)="closeSearch()" class="btn btn-success">Submit</button>
+                  </div>
+                </div>
+              </form>
+            <div class="form-group row">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <button  (click)="closeSearch()" class="btn btn-primary" >Clear</button>
+                  <button  (click)="closeSearch()" class="btn btn-success" >Search</button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

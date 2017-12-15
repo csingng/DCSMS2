@@ -1,0 +1,240 @@
+<app-safety-alert-report-menu></app-safety-alert-report-menu>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <div class="col-md-12 col-sm-12 col-xs-12 reportTitle">Report 15: Accidents of HA New Works Contracts by Unsafe Condition involved by year</div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form class="form-horizontal form-label-left">
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">From</label>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <select class="form-control" id="fromYear" required name="fromYear">
+                        <option *ngFor="let year of yearRange" [value]="fromYear">{{year}}</option>
+                      </select>
+                    </div>
+                    <label class="control-label col-md-1 col-sm-1 col-xs-1">To</label>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <select class="form-control" id="toYear" required name="toYear">
+                        <option *ngFor="let year of yearRange" [value]="toYear">{{year}}</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3">Top:</label>
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                          <input type="text" class="k-textbox form-control form-control-lg" />
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3">
+                          <kendo-dropdownlist [data]="topArray" style="width:100px"></kendo-dropdownlist>
+                      </div>
+                  </div>
+                <div class="ln_solid"></div>
+                <div class="form-group row">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Type of Contract:</label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="toc-building-cb" /><label class="k-checkbox-label" for="toc-building-cb">Building</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="toc-foundation-cb" /><label class="k-checkbox-label" for="toc-foundation-cb">Foundation</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">    
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="toc-civil-cb" /><label class="k-checkbox-label" for="toc-civil-cb">Civil Engineering</label>
+                    </label>
+                  </div>  
+                   
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-3 col-sm-3 col-xs-3">    
+                        <label class="k-checkbox-container">
+                          <input type="checkbox" class="k-checkbox" id="toc-demolition-cb" /><label class="k-checkbox-label" for="toc-demolition-cb">Demolition</label>
+                        </label>
+                      </div> 
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="k-checkbox-container">
+                          <input type="checkbox" class="k-checkbox" id="toc-combined-cb" /><label class="k-checkbox-label" for="toc-combined-cb">Bulding / Piling Combined</label>
+                      </label>
+                    </div>  
+                </div>    
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <button class="btn btn-primary" (click)="deselectAllTypeOfContract()">Clear All</button>
+                        <button class="btn btn-success" (click)="selectAllTypeOfContract()">Select All</button>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group row">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Unsafe Condition Involved:</label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb01-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb01-cb">Inadequate guards / barriers</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb02-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb02-cb">Defective-tools / equipment</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb03-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb03-cb">Congestion</label>
+                    </label>
+                  </div>
+                </div>
+
+
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb04-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb04-cb">Unsafe access</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb05-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb05-cb">Poor housekeeping</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb06-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb06-cb">Inadequate ventilation</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb07-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb07-cb">Lack of guard-rails</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb08-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb08-cb">Unsafe footing, slippery ground</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb09-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb09-cb">Inadequate / excess lighting</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb10-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb10-cb">Inadequate warning system</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb11-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb11-cb">Fire and explosive hazard</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb12-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb12-cb">Adverse weather</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb13-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb13-cb">Inadequate / improper personal protective equipment</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb14-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb14-cb">Hazardous environmental conditions (smoke, dust etc.)</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb15-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb15-cb">Damaged scaffold & catch fan & nylon mesh</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb16-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb16-cb">Inadequate protective canopy</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb17-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb17-cb">Working process tampered</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb18-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb18-cb">Overloading</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb19-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb19-cb">Lack of work platform</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="unsafe-condition-Hb20-cb" />
+                      <label class="k-checkbox-label" for="unsafe-condition-Hb20-cb">Others</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <button class="btn btn-primary" (click)="deselectAllTypeOfContract()">Clear All</button>
+                        <button class="btn btn-success" (click)="selectAllTypeOfContract()">Select All</button>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group row pull-right">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <button class="btn btn-success" (click)="selectAllTypeOfContract()">Submit</button>
+                    </div>
+                </div>
+              </form>
+            
+        </div>
+      </div>
+    </div>
+  </div>

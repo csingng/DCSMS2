@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+// import configuration from the theme builder
+@import 'variables.scss';
+
+@import "~@progress/kendo-theme-default/scss/all";
+
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+@import "../node_modules/nprogress/nprogress.css";
+@import "../node_modules/select2/dist/css/select2.min.css";
+@import "../node_modules/switchery/switchery.css";
+@import "../node_modules/starrr/dist/starrr.css";
+@import "../node_modules/bootstrap-daterangepicker/daterangepicker.css";
+@import "../node_modules/jqvmap/dist/jqvmap.min.css";
+@import "../vendors/iCheck/skins/flat/green.css";
+
+@import "gentelella.css";
+
+
+
+.reportTitle {
+  font-size:18px; 
+  margin: 5px 0 6px -7px;
+}
+
+.bg-well {
+  background-color: #DCDCDD
+}
+
+.nav_menu {
+  min-height: 58px;
+  margin-bottom: 0px;
+}
+
+.k-button {
+  min-width: 90px;
+}
+.k-list .k-item {
+  min-width: 90px;
+  padding: 9px;
+}
+.k-grid-header .k-header {
+  background-color: rgba(52, 73, 94, 0.94);
+  color: white;
+}

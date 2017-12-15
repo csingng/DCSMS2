@@ -1,0 +1,576 @@
+<p></p>
+<p class="red">(G) Accident/Incident details</p>
+
+  <div class="card">
+    <div class="card-block">
+      <form class="k-form-inline">
+                  <div class="row">
+                              <div class="x_panel"><div class="content">
+                              <label class="k-form-inline">
+                                <span>(a) Ga01 Time of accident/incident:(e.g. 13:21)</span>
+                                <kendo-maskedtextbox
+                                    [mask]="'00:00'"
+                                ></kendo-maskedtextbox>
+                              </label>
+                              <br>
+                              <div class="col-xs-24 col-sm-12">
+                                    <label class="k-form">
+                                      <span> Ga02 Damage of property:</span>
+                                      <input id="ga02y" type="checkbox" class="k-checkbox" checked="checked">
+                                      <label for="ga02y"class="k-checkbox-label" >Yes</label>
+                                      <input id="ga02n" type="checkbox" class="k-checkbox" checked="checked">
+                                      <label for="ga02n"class="k-checkbox-label" >No</label>
+                                    </label>
+                              </div>
+                        </div></div>
+
+                              <div class="x_panel"><div class="content">
+                              <label class="k-form">
+                                <span>(b) Place of Accident/Incident</span>
+                              </label>
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Gb01</span>
+                                              <input id="gb01" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gb01" class="k-checkbox-label" >Block</label>
+                                              <input class="k-textbox" placeholder="" />
+                                              <br>
+                                              <span>Gb03</span>
+                                              <input id="gb03" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gb03" class="k-checkbox-label" >Basement</label>
+                                              <input kendoTextBox />
+                                              <br>
+                                              <span>Gb05</span>
+                                              <input id="gb05" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gb05" class="k-checkbox-label" >Upper Floor</label>
+                                              <input kendoTextBox />
+                                              <br>
+                                              <span>Gb07</span>
+                                              <input id="gb07" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gb07" class="k-checkbox-label" >Roof</label>
+                                              <br>
+                                              <span>Gb09</span>
+                                              <input id="gb09" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gb09" class="k-checkbox-label" >Others(Please Specify):</label>
+                                              <input kendoTextBox />
+                                          </p>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Gb02</span>
+                                              <input id="gb02" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gb02" class="k-checkbox-label" >Wing</label>
+                                              <input kendoTextBox />
+                                              <br>
+                                              <span>Gb04</span>
+                                              <input id="gb04" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gb04" class="k-checkbox-label" >G/F</label>
+                                              <input kendoTextBox  type="hidden"/>
+                                              <br>
+                                              <span>Gb06</span>
+                                              <input id="gb06" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gb06" class="k-checkbox-label" >Working Floor</label>
+                                              <input kendoTextBox />
+                                              <br>
+                                              <span>Gb08</span>
+                                              <input id="gb08" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gb08" class="k-checkbox-label" >External Area</label>
+                                          </p>
+                                    </div>
+                              </div>
+                        </div></div>
+
+                              <div class="x_panel"><div class="content">
+                              <label class="k-form">
+                                <span>(c) Detailed location on site:(tick in appropriate box)</span>
+                              </label>
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-md-5 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Gc01</span>
+                                              <input id="gc01" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc01" class="k-checkbox-label" >Window opening</label>
+                                              <br>
+                                              <span>Gc04</span>
+                                              <input id="gc04" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc04" class="k-checkbox-label" >External works</label>
+                                              <br>
+                                              <span>Gc07</span>
+                                              <input id="gc07" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc07" class="k-checkbox-label" >General opening</label>
+                                              <br>
+                                              <span>Gc10</span>
+                                              <input id="gc10" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc10" class="k-checkbox-label" >Building block internal area</label>
+                                              <br>
+                                              <span>Gc13</span>
+                                              <input id="gc13" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc13" class="k-checkbox-label" >Excavation/trench</label>
+                                              <br>
+                                              <span>Gc16</span>
+                                              <input id="gc16" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc16" class="k-checkbox-label" >General opening</label>
+                                              <br>
+                                              <span>Gc17</span>
+                                              <input id="gc17" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc17" class="k-checkbox-label" >Others(Please Specify):</label>
+                                              <br>
+                                              <label class="k-form-field" ><input class="k-textbox" placeholder="" /></label>
+                                          </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Gc02</span>
+                                              <input id="gc02" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc02" class="k-checkbox-label" >External wall/Scaffold</label>
+                                              <br>
+                                              <span>Gc05</span>
+                                              <input id="gc05" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc05" class="k-checkbox-label" >Lift shaft</label>
+                                              <br>
+                                              <span>Gc08</span>
+                                              <input id="gc08" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc08" class="k-checkbox-label" >Steel bending yard/area</label>
+                                              <br>
+                                              <span>Gc11</span>
+                                              <input id="gc11" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc11" class="k-checkbox-label" >General edge</label>
+                                              <br>
+                                              <span>Gc14</span>
+                                              <input id="gc14" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc14" class="k-checkbox-label" >Storage yard</label>
+                                              <br>
+                                          </p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Gc03</span>
+                                              <input id="gc03" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc03" class="k-checkbox-label" >Internal wall</label>
+                                              <br>
+                                              <span>Gc06</span>
+                                              <input id="gc06" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc06" class="k-checkbox-label" >Stair edge</label>
+                                              <br>
+                                              <span>Gc09</span>
+                                              <input id="gc09" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc09" class="k-checkbox-label" >Pre-casting workshop</label>
+                                              <br>
+                                              <span>Gc12</span>
+                                              <input id="gc12" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc12" class="k-checkbox-label" >Foundation</label>
+                                              <br>
+                                              <span>Gc15</span>
+                                              <input id="gc15" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gc15" class="k-checkbox-label" >Slope/haul road</label>
+                                              <br>
+                                          </p>
+                                    </div>
+                              </div>
+                        </div></div>
+
+                              <div class="x_panel"><div class="content">
+                              <label class="k-form">
+                                <span>(d) Indicate the work process being undertaken at the time of the accident/incident(tick in appropriate box)</span>
+                              </label>
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Gd01</span>
+                                              <input id="gd01" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd01" class="k-checkbox-label" >Setting out</label>
+                                              <br>
+                                              <span>Gd04</span>
+                                              <input id="gd04" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd04" class="k-checkbox-label" >Formwork/Carpentry(wood)</label>
+                                              <br>
+                                              <span>Gd07</span>
+                                              <input id="gd07" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd07" class="k-checkbox-label" >Strutural erection</label>
+                                              <br>
+                                              <span>Gd10</span>
+                                              <input id="gd10" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd10" class="k-checkbox-label" >Concreting</label>
+                                              <br>
+                                              <span>Gd13</span>
+                                              <input id="gd13" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd13" class="k-checkbox-label" >Plant use</label>
+                                              <br>
+                                              <span>Gd16</span>
+                                              <input id="gd16" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd16" class="k-checkbox-label" >Finishing work</label>
+                                              <br>
+                                              <span>Gd19</span>
+                                              <input id="gd19" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd19" class="k-checkbox-label" >Pipe laying</label>
+                                              <br>
+                                              <span>Gd22</span>
+                                              <input id="gd22" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd22" class="k-checkbox-label" >Patrolling</label>
+                                              <br>
+                                              <span>Gd25</span>
+                                              <input id="gd25" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd25" class="k-checkbox-label" >Others(Please Specify):</label>
+                                              <br>
+                                              <label class="k-form-field" ><input class="k-textbox" placeholder="" /></label>
+                                          </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Gd02</span>
+                                              <input id="gd02" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd02" class="k-checkbox-label" >Demolition</label>
+                                              <br>
+                                              <span>Gd05</span>
+                                              <input id="gd05" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd05" class="k-checkbox-label" >Bricklaying</label>
+                                              <br>
+                                              <span>Gd08</span>
+                                              <input id="gd08" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd08" class="k-checkbox-label" >Cutting/welding</label>
+                                              <br>
+                                              <span>Gd11</span>
+                                              <input id="gd11" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd11" class="k-checkbox-label" >Falsework(metal)</label>
+                                              <br>
+                                              <span>Gd14</span>
+                                              <input id="gd14" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd14" class="k-checkbox-label" >Roadworks</label>
+                                              <br>
+                                              <span>Gd17</span>
+                                              <input id="gd17" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd17" class="k-checkbox-label" >Electrical work</label>
+                                              <br>
+                                              <span>Gd20</span>
+                                              <input id="gd20" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd20" class="k-checkbox-label" >RAccessing & conveying</label>
+                                              <br>
+                                              <span>Gd23</span>
+                                              <input id="gd23" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd23" class="k-checkbox-label" >Material landing</label>
+                                              <br>
+                                          </p>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Gd03</span>
+                                              <input id="gd03" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd03" class="k-checkbox-label" >Ground works</label>
+                                              <br>
+                                              <span>Gd06</span>
+                                              <input id="gd06" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd06" class="k-checkbox-label" >Tunnelling</label>
+                                              <br>
+                                              <span>Gd09</span>
+                                              <input id="gd09" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd09" class="k-checkbox-label" >Mixing</label>
+                                              <br>
+                                              <span>Gd12</span>
+                                              <input id="gd12" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd12" class="k-checkbox-label" >Piling</label>
+                                              <br>
+                                              <span>Gd15</span>
+                                              <input id="gd15" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd15" class="k-checkbox-label" >Surface treatment</label>
+                                              <br>
+                                              <span>Gd18</span>
+                                              <input id="gd18" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd18" class="k-checkbox-label" >Glazing</label>
+                                              <br>
+                                              <span>Gd21</span>
+                                              <input id="gd21" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd21" class="k-checkbox-label" >Lifting</label>
+                                              <br>
+                                              <span>Gd24</span>
+                                              <input id="gd24" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gd24" class="k-checkbox-label" >Steel rebar bending/fixing</label>
+                                              <br>
+                                          </p>
+                                    </div>
+                              </div>
+                        </div></div>
+
+                              <div class="x_panel"><div class="content">
+                              <label class="k-form">
+                                <span>(e) Indicate the type of accident/incident(tick in appropriate box)</span>
+                              </label>
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Ge01</span>
+                                              <input id="ge01" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge01" class="k-checkbox-label" >Trapped in/between object</label>
+                                              <br>
+                                              <span>Ge03</span>
+                                              <input id="ge03" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge03" class="k-checkbox-label" >Slip,trip/fall on same level</label>
+                                              <br>
+                                              <span>Ge05</span>
+                                              <input id="ge05" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge05" class="k-checkbox-label" >Striking against stationary object</label>
+                                              <br>
+                                              <span>Ge07</span>
+                                              <input id="ge07" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge07" class="k-checkbox-label" >Stepping on object</label>
+                                              <br>
+                                              <span>Ge09</span>
+                                              <input id="ge09" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge09" class="k-checkbox-label" >Electrocution</label>
+                                              <br>
+                                              <span>Ge11</span>
+                                              <input id="ge11" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge11" class="k-checkbox-label" >Falling object</label>
+                                              <br>
+                                              <span>Ge13</span>
+                                              <input id="ge13" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge13" class="k-checkbox-label" >Contact with moving machinery</label>
+                                              <br>
+                                              <span>Ge15</span>
+                                              <input id="ge15" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge15" class="k-checkbox-label" >Exposure to fire</label>
+                                              <br>
+                                              <span>Ge17</span>
+                                              <input id="ge17" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge17" class="k-checkbox-label" >Injured by hand tool</label>
+                                              <br>
+                                              <span>Ge19</span>
+                                              <input id="ge19" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge19" class="k-checkbox-label" >Asphyxiation</label>
+                                              <br>
+                                              <span>Ge21</span>
+                                              <input id="ge21" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge21" class="k-checkbox-label" >Injured by animal</label>
+                                              <br>
+                                              <span>Ge23</span>
+                                              <input id="ge23" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge23" class="k-checkbox-label" >Others(Please Specify):</label>
+                                              <br>
+                                              <label class="k-form-field" ><input class="k-textbox" placeholder="" /></label>
+                                          </p>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Ge02</span>
+                                              <input id="ge02" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge02" class="k-checkbox-label" >Injured whilst lifting/carrying</label>
+                                              <br>
+                                              <span>Ge04</span>
+                                              <input id="ge04" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge04" class="k-checkbox-label" >Fall of person from height</label>
+                                              <br>
+                                              <span>Ge06</span>
+                                              <input id="ge06" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge06" class="k-checkbox-label" >Striking against moving object</label>
+                                              <br>
+                                              <span>Ge08</span>
+                                              <input id="ge08" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge08" class="k-checkbox-label" >Exposure to harmful substance</label>
+                                              <br>
+                                              <span>Ge10</span>
+                                              <input id="ge10" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge10" class="k-checkbox-label" >Collapsing/overturning object</label>
+                                              <br>
+                                              <span>Ge12</span>
+                                              <input id="ge12" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge12" class="k-checkbox-label" >Struck by moving vehicle</label>
+                                              <br>
+                                              <span>Ge14</span>
+                                              <input id="ge14" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge14" class="k-checkbox-label" >Drowning</label>
+                                              <br>
+                                              <span>Ge16</span>
+                                              <input id="ge16" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge16" class="k-checkbox-label" >Exposure to explosion</label>
+                                              <br>
+                                              <span>Ge18</span>
+                                              <input id="ge18" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge18" class="k-checkbox-label" >Injured by fall of ground</label>
+                                              <br>
+                                              <span>Ge20</span>
+                                              <input id="ge20" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge20" class="k-checkbox-label" >Contact with hot surface</label>
+                                              <br>
+                                              <span>Ge22</span>
+                                              <input id="ge22" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="ge22" class="k-checkbox-label" >Injured in workplace violence</label>
+                                              <br>
+                                          </p>
+                                    </div>
+                              </div>
+                        </div></div>
+
+                              <p><b>TO COMPLETE ITEM (f) AND (g) BELOW FOR FALL OF PERSON FROM HEIGHT</b></p>
+                              
+                              <div class="x_panel"><div class="content">
+                              <label class="k-form-inline">
+                                <span>(f) Indicate the height from which the injured person fell Gf01:</span>
+                                <input class="k-textbox" placeholder="(Metres)" />
+                              </label>
+                        </div></div>
+
+                              <div class="x_panel"><div class="content">
+                              <label class="k-form">
+                                <span>(g) Indicate from where the injured person fell (tick in appropriate box)</span>
+                              </label>
+                              <br>
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Gg01</span>
+                                              <input id="gg01" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg01" class="k-checkbox-label" >Ladder</label>
+                                              <br>
+                                              <span>Gg03</span>
+                                              <input id="gg03" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg03" class="k-checkbox-label" >Suspended scaffold</label>
+                                              <br>
+                                              <span>Gg05</span>
+                                              <input id="gg05" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg05" class="k-checkbox-label" >Roof edge/hole in roof</label>
+                                              <br>
+                                              <span>Gg07</span>
+                                              <input id="gg07" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg07" class="k-checkbox-label" >Stairs</label>
+                                              <br>
+                                              <span>Gg09</span>
+                                              <input id="gg09" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg09" class="k-checkbox-label" >Into excavation</label>
+                                              <br>
+                                              <span>Gg11</span>
+                                              <input id="gg11" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg11" class="k-checkbox-label" >Lift shaft</label>
+                                              <br>
+                                              <span>Gg13</span>
+                                              <input id="gg13" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg13" class="k-checkbox-label" >Formwork</label>
+                                              <br>
+                                              <span>Gg14</span>
+                                              <input id="gg14" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg14" class="k-checkbox-label" >Others(Please Specify):</label>
+                                              <br>
+                                              <label class="k-form-field" ><input class="k-textbox" placeholder="" /></label>
+                                          </p>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Gg02</span>
+                                              <input id="gg02" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg02" class="k-checkbox-label" >General access scaffold</label>
+                                              <br>
+                                              <span>Gg04</span>
+                                              <input id="gg04" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg04" class="k-checkbox-label" >Steelwork</label>
+                                              <br>
+                                              <span>Gg06</span>
+                                              <input id="gg06" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg06" class="k-checkbox-label" >Tower scaffold</label>
+                                              <br>
+                                              <span>Gg08</span>
+                                              <input id="gg08" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg08" class="k-checkbox-label" >Gangway or other means of access</label>
+                                              <br>
+                                              <span>Gg10</span>
+                                              <input id="gg10" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg10" class="k-checkbox-label" >Gondola</label>
+                                              <br>
+                                              <span>Gg12</span>
+                                              <input id="gg12" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gg12" class="k-checkbox-label" >Vehicle/ Machinery</label>
+              
+                                          </p>
+                                    </div>
+                              </div>
+                        </div></div>
+                        <div class="x_panel"><div class="content">
+                              <label class="k-form">
+                                <span>(h) Indicate the agent involved (tick in appropriate box)</span>
+                              </label>
+                              <br>
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Gh01</span>
+                                              <input id="gh01" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gh01" class="k-checkbox-label" >Debas</label>
+                                              <br>
+                                              <span>Gh03</span>
+                                              <input id="gh03" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gh03" class="k-checkbox-label" >Material being lifted</label>
+                                              <br>
+                                              <span>Gh05</span>
+                                              <input id="gh05" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gh05" class="k-checkbox-label" >Stored materials</label>
+                                              <br>
+                                              <span>Gh07</span>
+                                              <input id="gh07" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gh07" class="k-checkbox-label" >Vehicle/mobile plant</label>
+                                              <br>
+                                              <span>Gh09</span>
+                                              <input id="gh09" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gh09" class="k-checkbox-label" >Heat</label>
+                                              <br>
+                                              <span>Gh11</span>
+                                              <input id="gh11" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gh11" class="k-checkbox-label" >Portable power driven hand tools</label>
+                                              <br>
+                                              <span>Gh13</span>
+                                              <input id="gh13" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gh13" class="k-checkbox-label" >Others(Please Specify):</label>
+                                              <br>
+                                              <label class="k-form-field" ><input class="k-textbox" placeholder="" /></label>
+                                          </p>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                          <p style="line-height: 2em;">
+                                              <span>Gh02</span>
+                                              <input id="gh02" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gh02" class="k-checkbox-label" >Non-power driven hand tools</label>
+                                              <br>
+                                              <span>Gh04</span>
+                                              <input id="gh04" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gh04" class="k-checkbox-label" >Harmful/toxic substances</label>
+                                              <br>
+                                              <span>Gh06</span>
+                                              <input id="gh06" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gh06" class="k-checkbox-label" >Electricity</label>
+                                              <br>
+                                              <span>Gh08</span>
+                                              <input id="gh08" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gh08" class="k-checkbox-label" >Lifting/Conveying machinery</label>
+                                              <br>
+                                              <span>Gh10</span>
+                                              <input id="gh10" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gh10" class="k-checkbox-label" >Dust/sand/chippings</label>
+                                              <br>
+                                              <span>Gh12</span>
+                                              <input id="gh12" type="checkbox"class="k-checkbox" checked="checked">
+                                              <label for="gh12" class="k-checkbox-label" >Fixed structure/Part of site</label>
+                                          </p>
+                                    </div>
+                              </div>
+                        </div></div>
+                              <div class="x_panel"><div class="content">
+                              <label class="k-form">
+                                <span>(i) Briefly describe the agent involved. (In the case of heat, specify what was hot, and in the case of power tools/plant, specify the type, age and manufacturer of the equipment.)</span>
+                              </label>
+                              <br>
+                              <div>
+                                <label class="k-form-field" ><input class="k-textbox" placeholder="" /></label>
+                              </div>
+                        </div></div>
+
+                              <div class="x_panel"><div class="content">
+                              <label class="k-form">
+                                <span>(j) Briefly describe the sequence of events leading to accident/incident. (Add other relevant information and use another sheet if necessary.)</span>
+                              </label>
+                              <br>
+                              <div>
+                                <label class="k-form-field" ><input class="k-textbox" placeholder="" /></label>
+                              </div>
+                        </div></div>
+                            </div>
+      </form>
+    </div>
+  </div>
+

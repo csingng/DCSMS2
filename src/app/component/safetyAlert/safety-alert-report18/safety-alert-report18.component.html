@@ -1,0 +1,168 @@
+<app-safety-alert-report-menu></app-safety-alert-report-menu>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <div class="col-md-12 col-sm-12 col-xs-12 reportTitle">Report 18: Accidents of HA New Works Contracts by Body Part affected by year</div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form class="form-horizontal form-label-left">
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">From</label>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <select class="form-control" id="fromYear" required name="fromYear">
+                        <option *ngFor="let year of yearRange" [value]="fromYear">{{year}}</option>
+                      </select>
+                    </div>
+                    <label class="control-label col-md-1 col-sm-1 col-xs-1">To</label>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <select class="form-control" id="toYear" required name="toYear">
+                        <option *ngFor="let year of yearRange" [value]="toYear">{{year}}</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3">Top:</label>
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                          <input type="text" class="k-textbox form-control form-control-lg" />
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3">
+                          <kendo-dropdownlist [data]="topArray" style="width:100px"></kendo-dropdownlist>
+                      </div>
+                  </div>
+                <div class="ln_solid"></div>
+                <div class="form-group row">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Type of Contract:</label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="toc-building-cb" /><label class="k-checkbox-label" for="toc-building-cb">Building</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="toc-foundation-cb" /><label class="k-checkbox-label" for="toc-foundation-cb">Foundation</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">    
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="toc-civil-cb" /><label class="k-checkbox-label" for="toc-civil-cb">Civil Engineering</label>
+                    </label>
+                  </div>  
+                   
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-3 col-sm-3 col-xs-3">    
+                        <label class="k-checkbox-container">
+                          <input type="checkbox" class="k-checkbox" id="toc-demolition-cb" /><label class="k-checkbox-label" for="toc-demolition-cb">Demolition</label>
+                        </label>
+                      </div> 
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="k-checkbox-container">
+                          <input type="checkbox" class="k-checkbox" id="toc-combined-cb" /><label class="k-checkbox-label" for="toc-combined-cb">Bulding / Piling Combined</label>
+                      </label>
+                    </div>  
+                </div>    
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <button class="btn btn-primary" (click)="deselectAllTypeOfContract()">Clear All</button>
+                        <button class="btn btn-success" (click)="selectAllTypeOfContract()">Select All</button>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group row">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Body Part Affected:</label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="body-part-affected-Ib01-cb" />
+                      <label class="k-checkbox-label" for="body-part-affected-Ib01-cb">Head</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="body-part-affected-Ib02-cb" />
+                      <label class="k-checkbox-label" for="body-part-affected-Ib02-cb">Spine (including neck)</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="body-part-affected-Ib03-cb" />
+                      <label class="k-checkbox-label" for="body-part-affected-Ib03-cb">Hand (including fingers)</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="body-part-affected-Ib04-cb" />
+                      <label class="k-checkbox-label" for="body-part-affected-Ib04-cb">Eye</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="body-part-affected-Ib05-cb" />
+                      <label class="k-checkbox-label" for="body-part-affected-Ib05-cb">General or systemic (e.g. poisoning)</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="body-part-affected-Ib06-cb" />
+                      <label class="k-checkbox-label" for="body-part-affected-Ib06-cb">Foot (including toes)</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="body-part-affected-Ib07-cb" />
+                      <label class="k-checkbox-label" for="body-part-affected-Ib07-cb">Ear</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="body-part-affected-Ib08-cb" />
+                      <label class="k-checkbox-label" for="body-part-affected-Ib08-cb">Trunk (including chest, abdomen, pelvis, waist)</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="body-part-affected-Ib09-cb" />
+                      <label class="k-checkbox-label" for="body-part-affected-Ib09-cb">Leg (including hip & ankle)</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="body-part-affected-Ib10-cb" />
+                      <label class="k-checkbox-label" for="body-part-affected-Ib10-cb">Arm (including shoulder & wrist)</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <button class="btn btn-primary" (click)="deselectAllTypeOfContract()">Clear All</button>
+                        <button class="btn btn-success" (click)="selectAllTypeOfContract()">Select All</button>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group row pull-right">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <button class="btn btn-success" (click)="selectAllTypeOfContract()">Submit</button>
+                    </div>
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>

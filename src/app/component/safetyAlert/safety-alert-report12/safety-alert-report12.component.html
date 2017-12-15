@@ -1,0 +1,326 @@
+<app-safety-alert-report-menu></app-safety-alert-report-menu>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <div class="col-md-12 col-sm-12 col-xs-12 reportTitle">Report 12: Accidents of HA New Works Contracts by Occupation by year</div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form class="form-horizontal form-label-left">
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">From</label>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <select class="form-control" id="fromYear" required name="fromYear">
+                        <option *ngFor="let year of yearRange" [value]="fromYear">{{year}}</option>
+                      </select>
+                    </div>
+                    <label class="control-label col-md-1 col-sm-1 col-xs-1">To</label>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <select class="form-control" id="toYear" required name="toYear">
+                        <option *ngFor="let year of yearRange" [value]="toYear">{{year}}</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3">Top:</label>
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                          <input type="text" class="k-textbox form-control form-control-lg" />
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3">
+                          <kendo-dropdownlist [data]="topArray" style="width:100px"></kendo-dropdownlist>
+                      </div>
+                  </div>
+                <div class="ln_solid"></div>
+                <div class="form-group row">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Type of Contract:</label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="toc-building-cb" /><label class="k-checkbox-label" for="toc-building-cb">Building</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="toc-foundation-cb" /><label class="k-checkbox-label" for="toc-foundation-cb">Foundation</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">    
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="toc-civil-cb" /><label class="k-checkbox-label" for="toc-civil-cb">Civil Engineering</label>
+                    </label>
+                  </div>  
+                   
+                </div>
+               
+                <div class="form-group row" style="margin-top:-10px">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-3 col-sm-3 col-xs-3">    
+                        <label class="k-checkbox-container">
+                          <input type="checkbox" class="k-checkbox" id="toc-demolition-cb" /><label class="k-checkbox-label" for="toc-demolition-cb">Demolition</label>
+                        </label>
+                      </div> 
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="k-checkbox-container">
+                          <input type="checkbox" class="k-checkbox" id="toc-combined-cb" /><label class="k-checkbox-label" for="toc-combined-cb">Bulding / Piling Combined</label>
+                      </label>
+                    </div>  
+                </div>    
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <button class="btn btn-primary" (click)="deselectAllTypeOfContract()">Clear All</button>
+                        <button class="btn btn-success" (click)="selectAllTypeOfContract()">Select All</button>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group row">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Occupation:</label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc01-cb" /><label class="k-checkbox-label" for="occupation-Fc01-cb">Bar bender / steelbender</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc02-cb" /><label class="k-checkbox-label" for="occupation-Fc02-cb">Concretor</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc03-cb" /><label class="k-checkbox-label" for="occupation-Fc03-cb">Drainlayer</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>    
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc04-cb" /><label class="k-checkbox-label" for="occupation-Fc04-cb">Plumber</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc05-cb" /><label class="k-checkbox-label" for="occupation-Fc05-cb">Leveller</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc06-cb" /><label class="k-checkbox-label" for="occupation-Fc06-cb">Bamboo Scaffolder</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>   
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc07-cb" /><label class="k-checkbox-label" for="occupation-Fc07-cb">Carpenter / Joiner</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc08-cb" /><label class="k-checkbox-label" for="occupation-Fc08-cb">Carpenter (Formwork)</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc09-cb" /><label class="k-checkbox-label" for="occupation-Fc09-cb">Metal Scaffolder</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>    
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc10-cb" /><label class="k-checkbox-label" for="occupation-Fc10-cb">Plant & Equipment Operator</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc11-cb" /><label class="k-checkbox-label" for="occupation-Fc11-cb">Truck driver</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc12-cb" /><label class="k-checkbox-label" for="occupation-Fc12-cb">Rock-breaking driller</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>      
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc13-cb" /><label class="k-checkbox-label" for="occupation-Fc13-cb">Blacksmith</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc14-cb" /><label class="k-checkbox-label" for="occupation-Fc14-cb">General Welder</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc15-cb" /><label class="k-checkbox-label" for="occupation-Fc15-cb">Metal Worker</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>    
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc16-cb" /><label class="k-checkbox-label" for="occupation-Fc16-cb">Glazier</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc17-cb" /><label class="k-checkbox-label" for="occupation-Fc17-cb">Excavator</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc18-cb" /><label class="k-checkbox-label" for="occupation-Fc18-cb">Labourer</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>    
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc19-cb" /><label class="k-checkbox-label" for="occupation-Fc19-cb">Painter / Decorator</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc20-cb" /><label class="k-checkbox-label" for="occupation-Fc20-cb">Plasterer</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc21-cb" /><label class="k-checkbox-label" for="occupation-Fc21-cb">Terrazzo & Granolithic Worker</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>      
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc22-cb" /><label class="k-checkbox-label" for="occupation-Fc22-cb">Bricklayer</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc23-cb" /><label class="k-checkbox-label" for="occupation-Fc23-cb">Mason</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc24-cb" /><label class="k-checkbox-label" for="occupation-Fc24-cb">Structural Steel Welder</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>    
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc25-cb" /><label class="k-checkbox-label" for="occupation-Fc25-cb">Structural Steel Erector</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc26-cb" /><label class="k-checkbox-label" for="occupation-Fc26-cb">Rigger / Metal Formwork Erector</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc27-cb" /><label class="k-checkbox-label" for="occupation-Fc27-cb">Asphalter (Road Construction)</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>    
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc28-cb" /><label class="k-checkbox-label" for="occupation-Fc28-cb">Construction Plant Mechanic</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc29-cb" /><label class="k-checkbox-label" for="occupation-Fc29-cb">Marble Worker</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc30-cb" /><label class="k-checkbox-label" for="occupation-Fc30-cb">Electrician</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>     
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc31-cb" /><label class="k-checkbox-label" for="occupation-Fc31-cb">Mechanical Fitter</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc32-cb" /><label class="k-checkbox-label" for="occupation-Fc32-cb">Refrigeration / AC / Ventilation Mechanic</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc33-cb" /><label class="k-checkbox-label" for="occupation-Fc33-cb">Fire Service Mechanic</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>     
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc34-cb" /><label class="k-checkbox-label" for="occupation-Fc34-cb">Lift and Escalator Mechanic</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc35-cb" /><label class="k-checkbox-label" for="occupation-Fc35-cb">Cable Jointer (Power)</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc36-cb" /><label class="k-checkbox-label" for="occupation-Fc36-cb">Foreman</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>     
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc37-cb" /><label class="k-checkbox-label" for="occupation-Fc37-cb">Surveyor</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="occupation-Fc38-cb" /><label class="k-checkbox-label" for="occupation-Fc38-cb">Others</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <button class="btn btn-primary" (click)="deselectAllTypeOfContract()">Clear All</button>
+                        <button class="btn btn-success" (click)="selectAllTypeOfContract()">Select All</button>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group row pull-right">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <button class="btn btn-success" (click)="selectAllTypeOfContract()">Submit</button>
+                    </div>
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Current Accident Statistics Overview</h2>
+            <div class="clearfix"></div>
+          </div> 
+          <div class="x_content">
+              <kendo-grid [data]="gridData">
+                  <kendo-grid-column field="site" title="Site" [width]="400"></kendo-grid-column>
+                  <kendo-grid-column field="confirmedF787" title="Confirmed F787"></kendo-grid-column>
+                  <kendo-grid-column field="processingF787" title="Processing F787"></kendo-grid-column>
+                  <kendo-grid-column field="accident" title="Accident"></kendo-grid-column>
+                  <kendo-grid-column field="fatalAccident" title="Fatal Accident"></kendo-grid-column>
+              </kendo-grid>
+          </div>
+        </div>
+    </div>
+</div>

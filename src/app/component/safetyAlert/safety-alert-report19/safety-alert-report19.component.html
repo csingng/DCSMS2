@@ -1,0 +1,68 @@
+<app-safety-alert-report-menu></app-safety-alert-report-menu>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <div class="col-md-12 col-sm-12 col-xs-12 reportTitle">Report 19: Type of Accident vs Severity of Injury, Location of Accident vs Severity of Injury and Type of Injury vs Severity of Injury</div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form class="form-horizontal form-label-left">
+                <div class="form-group row">
+                  <label class="control-label col-md-4 col-sm-4 col-xs-12">Threshold: (Number of mandays lost)</label>
+                  <div class="col-md-3 col-sm-3 col-xs-12">
+                    <input type="text" class="k-textbox form-control form-control-lg" />
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-12">
+                      <button (click)="closeSearch()" class="btn btn-success">Submit</button>
+                  </div>
+                </div>
+                <div class="x_panel">
+                  <div class="form-group row">
+                      <h5>Remarks:</h5>
+                  </div>
+                  <p class="excerpt">
+                      This is a Chi-spuare test for independence. One assumption is the expected frequency for each category must be 5 or more.
+                  </p>
+                  <p class="excerpt">
+                      The P-value (or probability value) is the probability of getting a sample statostic or a more extreme statistic in the direction of the alremative hypothesis when the null hypothesis is true.
+                  </p>
+                </div>
+                <div class="x_panel">
+                <div class="form-group row">
+                    <h5>Guidelines for P-Values:</h5>
+                </div>
+                <div class="form-group row">
+                  <kendo-grid [data]="gridData">
+                      <kendo-grid-column field="col1" title="P-value"></kendo-grid-column>
+                      <kendo-grid-column field="col2" title="Decision"></kendo-grid-column>
+                      <kendo-grid-column field="col3" title="Difference"></kendo-grid-column>
+                  </kendo-grid>
+                </div>
+                </div>
+                <div class="x_panel">
+                <div class="form-group row">
+                    <h5>For example:</h5>
+                </div>
+                <p class="excerpt">
+                    H0 = injury severity is independent of the type of injury
+                </p>
+                <p class="excerpt">
+                    H1 = injury severity is dependent of the type of injury (claim)
+                </p>
+              </div>
+              <div class="x_panel">
+                <div class="form-group row">
+                    <h5>The hypothesis test is a right-tailed test</h5>
+                </div>
+                <div class="form-group row">It calculated P-value = 0.25, then do not reject null hypothesis. There is not enough to support the claim H1 that injury severity is dependent of the type of injury.</div>
+                <div class="form-group row">Formula of Chi-spuare:</div>
+                <div class="form-group row">[x] = a = expected value = row total 'column total / grand total</div>
+                <div class="form-group row">o = observed value</div>  
+              </div> 
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

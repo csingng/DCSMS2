@@ -1,0 +1,189 @@
+<app-safety-alert-report-menu></app-safety-alert-report-menu>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <div class="col-md-12 col-sm-12 col-xs-12 reportTitle">Report 13: Accidents of HA New Works Contracts by Agent involved by year</div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form class="form-horizontal form-label-left">
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">From</label>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <select class="form-control" id="fromYear" required name="fromYear">
+                        <option *ngFor="let year of yearRange" [value]="fromYear">{{year}}</option>
+                      </select>
+                    </div>
+                    <label class="control-label col-md-1 col-sm-1 col-xs-1">To</label>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                      <select class="form-control" id="toYear" required name="toYear">
+                        <option *ngFor="let year of yearRange" [value]="toYear">{{year}}</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3">Top:</label>
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                          <input type="text" class="k-textbox form-control form-control-lg" />
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3">
+                          <kendo-dropdownlist [data]="topArray" style="width:100px"></kendo-dropdownlist>
+                      </div>
+                  </div>
+                <div class="ln_solid"></div>
+                <div class="form-group row">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Type of Contract:</label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="toc-building-cb" /><label class="k-checkbox-label" for="toc-building-cb">Building</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">  
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="toc-foundation-cb" /><label class="k-checkbox-label" for="toc-foundation-cb">Foundation</label>
+                    </label>
+                  </div>  
+                  <div class="col-md-3 col-sm-3 col-xs-3">    
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="toc-civil-cb" /><label class="k-checkbox-label" for="toc-civil-cb">Civil Engineering</label>
+                    </label>
+                  </div>  
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-3 col-sm-3 col-xs-3">    
+                        <label class="k-checkbox-container">
+                          <input type="checkbox" class="k-checkbox" id="toc-demolition-cb" /><label class="k-checkbox-label" for="toc-demolition-cb">Demolition</label>
+                        </label>
+                      </div> 
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <label class="k-checkbox-container">
+                          <input type="checkbox" class="k-checkbox" id="toc-combined-cb" /><label class="k-checkbox-label" for="toc-combined-cb">Bulding / Piling Combined</label>
+                      </label>
+                    </div>  
+                </div>    
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <button class="btn btn-primary" (click)="deselectAllTypeOfContract()">Clear All</button>
+                        <button class="btn btn-success" (click)="selectAllTypeOfContract()">Select All</button>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group row">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Agent Involved:</label>
+
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="agent-Gh01-cb" />
+                      <label class="k-checkbox-label" for="agent-Gh01-cb">Debris</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="agent-Gh02-cb" />
+                      <label class="k-checkbox-label" for="agent-Gh02-cb">Non-power driven hand tools</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="agent-Gh03-cb" />
+                      <label class="k-checkbox-label" for="agent-Gh03-cb">Materials being lifted</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="agent-Gh04-cb" />
+                      <label class="k-checkbox-label" for="agent-Gh04-cb">Harmful / toxic substances</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="agent-Gh05-cb" />
+                      <label class="k-checkbox-label" for="agent-Gh05-cb">Stored materials</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="agent-Gh06-cb" />
+                      <label class="k-checkbox-label" for="agent-Gh06-cb">Electricity</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="agent-Gh07-cb" />
+                      <label class="k-checkbox-label" for="agent-Gh07-cb">Vehicle / mobile plant</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="agent-Gh08-cb" />
+                      <label class="k-checkbox-label" for="agent-Gh08-cb">Lifting / Conveying machinery</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="agent-Gh09-cb" />
+                      <label class="k-checkbox-label" for="agent-Gh09-cb">Heat</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="agent-Gh10-cb" />
+                      <label class="k-checkbox-label" for="agent-Gh10-cb">Dust / sand / chippings</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="agent-Gh11-cb" />
+                      <label class="k-checkbox-label" for="agent-Gh11-cb">Portable power driven hand tools</label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="agent-Gh12-cb" />
+                      <label class="k-checkbox-label" for="agent-Gh12-cb">Fixed structure / Part of site</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row" style="margin-top:-10px">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <label class="k-checkbox-container">
+                      <input type="checkbox" class="k-checkbox" id="agent-Gh13-cb" />
+                      <label class="k-checkbox-label" for="agent-Gh13-cb">Others</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <button class="btn btn-primary" (click)="deselectAllTypeOfContract()">Clear All</button>
+                        <button class="btn btn-success" (click)="selectAllTypeOfContract()">Select All</button>
+                    </div>
+                </div>
+                <div class="ln_solid"></div>
+                <div class="form-group row pull-right">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <button class="btn btn-success" (click)="selectAllTypeOfContract()">Submit</button>
+                    </div>
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>

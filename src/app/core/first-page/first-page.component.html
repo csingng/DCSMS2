@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Role Assignment</h2>
+            <div class="clearfix"></div>
+          </div> 
+          <div class="x_content">
+              <form class="form-horizontal form-label-left">
+                  <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">Safety Alert Role</label>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        
+                        <select class="form-control" #safetyAlertRole>
+                            <option *ngFor="let option of safetyAlertRoles" [value]="option.key">{{option.label}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <button  (click)="submitSafetyAlertRole(safetyAlertRole.value)" class="btn btn-success" >Submit</button>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3">Site Alert Role</label>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                              <select class="form-control" id="siteAlertRole" required name="siteAlertRole">
+
+                              </select>
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3">
+                          <button  (click)="submitSiteAlertRole()" class="btn btn-success" >Submit</button>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3">Site Memo/Direction Role</label>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                              <select class="form-control" id="siteMemoRole" required name="siteMemoRole">
+
+                              </select>
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3">
+                          <button  (click)="submitSiteMemoRole()" class="btn btn-success" >Submit</button>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3">Structural Inspection Role</label>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                              <select class="form-control" id="structInspectRole" required name="structInspectRole">
+
+                              </select>
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3">
+                          <button  (click)="submitStructInspectRole()" class="btn btn-success" >Submit</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+        </div>
+    </div>
+</div>

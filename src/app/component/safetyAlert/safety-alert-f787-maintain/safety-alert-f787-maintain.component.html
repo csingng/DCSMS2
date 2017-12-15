@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Form 787</h2>
+            <div class="clearfix"></div>
+          </div> 
+          <div class="x_content">
+              <section class="well">
+                  <kendo-tabstrip>
+                      <kendo-tabstrip-tab [title]="'Site'" [selected]="true">
+                          <ng-template kendoTabContent>
+                            <app-safety-alert-site></app-safety-alert-site>
+                          </ng-template>
+                      </kendo-tabstrip-tab>
+                      <kendo-tabstrip-tab [title]="'Form 787'">
+                          <ng-template kendoTabContent>
+                            <app-safety-alert-f787-index></app-safety-alert-f787-index>
+                          </ng-template>
+                      </kendo-tabstrip-tab>
+                  </kendo-tabstrip> 
+              </section>    
+          </div>
+        </div>
+    </div>
+</div>

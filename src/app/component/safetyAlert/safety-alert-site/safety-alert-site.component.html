@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+
+          <form class="form-horizontal form-label-left">
+  
+            <div class="form-group row">
+              <!-- <kendo-grid [data]="view | async" [pageable]="true"> -->
+                <kendo-grid [data]="view | async" [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort" [pageable]="true"
+                  [sortable]="true" (dataStateChange)="onStateChange($event)" (edit)="editHandler($event)" (cancel)="cancelHandler($event)"
+                  (save)="saveHandler($event)" (remove)="removeHandler($event)" (add)="addHandler($event)">
+            
+                  <kendo-grid-column [width]="100" field="contractNumber">
+                      <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                        Contract
+                        <br>Number
+                      </ng-template>
+                    </kendo-grid-column>
+                    <kendo-grid-column [width]="250" field="contractTitle">
+                      <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                        Contract Title
+                      </ng-template>
+                    </kendo-grid-column>
+                  <kendo-grid-column [width]="180" field="siteName">
+                    <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                      Site Name
+                    </ng-template>
+                  </kendo-grid-column>
+                  <kendo-grid-column [width]="120" field="contractor">
+                    <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+                      Contractor
+                    </ng-template>
+                  </kendo-grid-column>
+                  <kendo-grid-command-column [width]="120" title="">
+                      <ng-template kendoGridCellTemplate>
+                          <form class="form-horizontal form-label-left">
+                              <div class="form-group row">
+                                <button (click)="navigate('safetyAlert/f787Main')" class="btn btn-success">Create F787</button>
+                              </div>
+                          </form>
+                      </ng-template>
+                  </kendo-grid-command-column>
+              </kendo-grid>
+            </div>
+          </form>
+
+    </div>
+</div>
